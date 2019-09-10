@@ -1,0 +1,37 @@
+===========================================================================
+node_modules / react-native-tesseract-ocr / android / build.gradle
+node_modules / react-native-fetch-blob / android / build.gradle
+===========================================================================
+
+------------------------------------------------------------------------
+
+buildscript {
+    repositories {
+        google()    //  Add This
+        jcenter()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.4.1")   //  Change version to 3.4.1
+    }
+}
+
+------------------------------------------------------------------------
+
+android {
+    compileSdkVersion 28    //  change SDK version
+    buildToolsVersion '28.0.3'  //  change Build tool version
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28 //  change Target SDK version
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+    lintOptions {
+       warning 'InvalidPackage'
+    }
+}
